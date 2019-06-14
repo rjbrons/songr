@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Songr Song List</title>
+</head>
+<body>
+<h1>Songr Album List</h1>
+<ul>
+    <li th:each="song : ${songList}" >
+        <p>Artist: <span th:text="${song.title}"></span></p>
+        <p>Album Length: <span th:text="${song.length}"></span></p>
+        <p>Songs: <span th:text="${song.track}"></span></p>
+        <p>Songs: <span th:text="${song.album}"></span></p>
+    </li>
+</ul>
+</body>
+</html>
