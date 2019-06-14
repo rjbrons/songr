@@ -13,6 +13,7 @@ Create a basic web app, can also communicate with database to display saved info
     `/reverse?sentence=<phrase you want to have reversed> `
 
 `/album` Displays list of albums in the database.
+`/album/add`  Displays a form for adding a new album to the database.
 
 # How to Use
 
