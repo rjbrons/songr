@@ -1,11 +1,9 @@
 package com.rjb888.week3App.songr;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 //Model for Album
 @Entity
@@ -20,13 +18,20 @@ public class Album {
     int length;
     String imageUrl;
 
+    @OneToMany(mappedBy = "album")
+    List<Song> songs;
+
     public Album(){};
+
+
+
     public Album(String title, String artist, int songCount, int length, String imageUrl){
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+        this.songs = new ArrayList<>();
     }
 
     public long getId() {
@@ -75,5 +80,13 @@ public class Album {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
     }
 }
